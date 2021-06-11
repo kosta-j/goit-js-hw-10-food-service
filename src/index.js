@@ -1,5 +1,5 @@
 'use strict';
-// adding html
+// ADD HTML
 import templateFunction from './template/menu-template.hbs';
 import cards from './menu.json';
 import './sass/main.scss';
@@ -13,7 +13,7 @@ function createMenuCards(cards) {
   return cards.map(templateFunction).join('');
 }
 
-// switch themes
+// SWITCH THEMES
 const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
