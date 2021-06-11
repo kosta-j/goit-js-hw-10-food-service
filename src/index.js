@@ -17,7 +17,6 @@ const bodyRef = document.querySelector('body');
 const checkboxRef = document.querySelector('#theme-switch-toggle');
 
 // set defaults
-checkboxRef.checked = false;
 applyDefaultTheme();
 
 // checkbox listener
@@ -42,6 +41,7 @@ function applyDefaultTheme() {
 
   if (localStorageTheme == null) {
     bodyRef.classList.add(Theme.LIGHT);
+    checkboxRef.checked = false;
   } else {
     bodyRef.className = '';
     bodyRef.classList.add(localStorageTheme);
