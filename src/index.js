@@ -1,17 +1,12 @@
 'use strict';
-// ADD HTML
 import templateFunction from './template/menu-template.hbs';
 import cards from './menu.json';
 import './sass/main.scss';
 
+// ADD HTML
 const menuRef = document.querySelector('.js-menu');
-const cardsMarkup = createMenuCards(cards);
-
+const cardsMarkup = templateFunction(cards);
 menuRef.insertAdjacentHTML('beforeend', cardsMarkup);
-
-function createMenuCards(cards) {
-  return cards.map(templateFunction).join('');
-}
 
 // SWITCH THEMES
 const Theme = {
@@ -30,11 +25,9 @@ checkboxRef.addEventListener('change', checkboxChangeHandler);
 
 function checkboxChangeHandler() {
   if (checkboxRef.checked) {
-    bodyRef.classList.add(Theme.DARK);
-    bodyRef.classList.remove(Theme.LIGHT);
+    bodyRef.classList.replace(Theme.LIGHT, Theme.DARK);
   } else {
-    bodyRef.classList.remove(Theme.DARK);
-    bodyRef.classList.add(Theme.LIGHT);
+    bodyRef.classList.replace(Theme.DARK, Theme.LIGHT);
   }
   saveThemeToLocalStorage();
 }
