@@ -40,9 +40,8 @@ function saveThemeToLocalStorage() {
 function applyDefaultTheme() {
   const localStorageTheme = localStorage.getItem('theme');
 
-  // apply default theme
   if (localStorageTheme == null) {
-    bodyRef.classList.add = Theme.LIGHT;
+    bodyRef.classList.add(Theme.LIGHT);
   } else {
     bodyRef.className = '';
     bodyRef.classList.add(localStorageTheme);
